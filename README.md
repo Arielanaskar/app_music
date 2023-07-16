@@ -16,8 +16,7 @@
 <h3>Teknologi yang digunakan :</h3>
 <ul>
 <li>Front End : React JS, Tailwind</li>
-<li>Backend : Laravel PHP FrameWork</li>
-<li>Api : Spotify Api </li>
+<li>Backend :  Spotify API </li>
 </ul>
 <br/>
 <h3>Halaman Aplikasi :</h3>
@@ -38,6 +37,10 @@
         <h4>Artist</h4>
     </li>
     <p>Menampilkan artist-artist dari yang terpopuler.</p>
+    <li>
+        <h4>Podcasts</h4>
+    </li>
+    <p>Menampilkan podcast-podcast populer.</p>
   </ul>
 <br>
 <h3> Beberapa Tampilan Aplikasi :</h3>
@@ -88,7 +91,7 @@
 
 ### <p>Tanggal Rilis</p>
 **Release date : 8 July 2023**
-> catatan: aplikasi ini belum sepenuh nya jadi, jadi beberapa halaman tidak ada seperti podcast, album saved, dan favorites, aplikasi ini akan di update seiring waktu
+> catatan: aplikasi ini belum responsive dan ada 3 halaman yang belum ada, seperti recent, saveAlbum, dan favourites
 
 ------------
 ## 💻 Panduan Instalasi Project
@@ -98,13 +101,7 @@
 git clone https://github.com/Arielanaskar/app_music.git
 ```
 
-2. **Install Dependdency Laravel**
-```bash
-cd app_music
-composer install
-```
-
-3. **Install Npm Package**
+2. **Install Npm Package**
 ```bash
 cd app_music
 npm install
@@ -112,9 +109,8 @@ npm install
 
 3. **Jalankan Aplikasi**
 ```bash
-npm run dev
+npm start
 ```
-
 
 ## 🧑 Pemilik
 
