@@ -1,38 +1,349 @@
-.App {
-  text-align: center;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.main-scroll::-webkit-scrollbar {
+    width: 9px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.main-scroll::-webkit-scrollbar-thumb {
+    background: #a7b0b5;
+    border-radius: 10px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.seek-slider {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 9rem;
+    height: 0.125rem;
+}
+
+.seek-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background: #25252d;
+    border: 3px solid white;
+    cursor: pointer;
+    width: 15px;
+    height: 15px;
+    border-radius: 100%;
+}
+
+.banner {
+    background-color: #080809;
+    background-image: linear-gradient(-90deg, #080809 0%, #111115 50%);
+}
+
+.genre-card {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.song-table th,
+.song-table td {
+    padding: 0.75rem;
+    text-align: left;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.song-table td {
+    border-bottom: none;
+}
+
+.song-table-2 td {
+    padding: 0.75rem;
+    text-align: left;
+}
+
+.playlist-card {
+    overflow: hidden;
+}
+
+.playlist-card .play-button {
+    opacity: 0;
+    transform: translateY(30%) scale(1);
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.playlist-card:hover .play-button {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.playlist-card .play-button:hover {
+    transform: scale(1.1);
+}
+
+.artist-card .play-button-artist {
+    opacity: 0;
+    transform: translateY(30%) scale(1);
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.artist-card:hover .play-button-artist {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.artist-card .play-button-artist:hover {
+    transform: scale(1.1);
+}
+
+.track-card:hover .playpause-btn {
+    opacity: 1;
+    cursor: pointer;
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.track-card:hover .track-num {
+    display: none;
+}
+
+.track-card:hover #wave {
+    display: none;
+}
+
+#wave {
+    /* display: flex; */
+    justify-content: center;
+    align-items: flex-end;
+    /* width: px; */
+    height: 15px;
+    /* border: 2px solid red; */
+}
+
+.stroke {
+    background: #6554af;
+    height: 100%;
+    width: 2px;
+    margin: 0px 1px;
+    animation: animate 1.4s linear infinite;
+}
+
+@keyframes animate {
+    50% {
+        height: 50%;
+        background: #6554af;
+    }
+    100% {
+        height: 100%;
+    }
+}
+
+.stroke:nth-child(1) {
+    animation-delay: 0s;
+}
+.stroke:nth-child(2) {
+    animation-delay: 0.3s;
+}
+.stroke:nth-child(3) {
+    animation-delay: 0.6s;
+}
+.stroke:nth-child(4) {
+    animation-delay: 0.9s;
+}
+.stroke:nth-child(5) {
+    animation-delay: 0.6s;
+}
+.stroke:nth-child(6) {
+    animation-delay: 0.3s;
+}
+.stroke:nth-child(7) {
+    animation-delay: 0s;
+}
+
+.track-card {
+    position: relative;
+}
+
+.progress-bar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 2px;
+    background-color: #6554af;
+    transition: width 0.3s linear;
+}
+
+.name-text {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+@keyframes marquee {
+    0% {
+        transform: translateX(0%);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+.coba:hover .name-text {
+    animation: marquee 5s linear alternate;
+}
+
+@keyframes slideOutToBottom {
+    to {
+        bottom: -100%;
+    }
+}
+
+.g-play:hover .loader{
+    display: none;
+}
+
+.g-play:hover .pauseAudio {
+    display: inline-block;
+}
+
+.loader {
+    height: 50px;
+    justify-content: center;
+    align-items: center;
+}
+
+.strokes {
+    background: #f1f1f1;
+    height: 100%;
+    width: 10px;
+    border-radius: 50px;
+    margin: 0 5px;
+    animation: animate1 1.4s linear infinite;
+}
+
+@keyframes animate1 {
+    0% {
+        height: 20%;
+        background: #f1f1f1;
+    }
+
+    50% {
+        height: 100%;
+    }
+
+    100% {
+        height: 20%;
+        background: #9333EA;
+    }
+}
+
+.strokes:nth-child(1) {
+    animation-delay: -0.9s;
+}
+.strokes:nth-child(2) {
+    animation-delay: -0.6s;
+}
+.strokes:nth-child(3) {
+    animation-delay: -0.3s;
+}
+.strokes:nth-child(4) {
+    animation-delay: 0s;
+}
+.strokes:nth-child(5) {
+    animation-delay: -0.3s;
+}
+.strokes:nth-child(6) {
+    animation-delay: -0.6s;
+}
+.strokes:nth-child(7) {
+    animation-delay: -0.9s;
+}
+
+.wave-container {
+  align-items: flex-end;
+  height: 30px;
+}
+
+.wave-bar {
+  background: #9333EA;
+  width: 3px;
+  height: 100%;
+  border-top-right-radius: 50px;
+  border-top-left-radius: 50px;
+  margin: 2px;
+  animation: wave-animation 1.4s linear infinite;
+}
+
+@keyframes wave-animation {
+  0% {
+    height: 10px;
+  }
+  50% {
+    height: 30px;
+  }
+  100% {
+    height: 10px;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.wave-bar:nth-child(1) {
+    animation-delay: -0.9s;
+}
+.wave-bar:nth-child(2) {
+    animation-delay: -0.6s;
+}
+.wave-bar:nth-child(3) {
+    animation-delay: -0.3s;
+}
+.wave-bar:nth-child(4) {
+    animation-delay: 0s;
+}
+.wave-bar:nth-child(5) {
+    animation-delay: -0.3s;
+}
+.wave-bar:nth-child(6) {
+    animation-delay: -0.6s;
+}
+.wave-bar:nth-child(7) {
+    animation-delay: -0.9s;
+} 
+
+.card-album:hover #waved {
+    display: none;
+}
+
+.card-album:hover .pause-btn-album {
+    display: flex;
+}
+
+.login-page {
+  background-color: #080808;
+  height: 100vh;
+  width: 100vw;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  overflow: hidden;
+  flex-direction: column;
 }
 
-.App-link {
-  color: #61dafb;
+.logo {
+  width: 30%;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.login-btn {
+  width: 200px;
+  padding: 15px 0px;
+  text-align: center;
+  background-color: #fefefe;
+  border-radius: 50px;
+  color: #1f1f1f;
+  font-weight: 600;
+  margin-top: 20%;
 }
+
+.card-banner::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+}
+
+.podcast-card:is(:hover, :focus) .card-banner a img {
+  opacity: 0.8;
+}
+
+.podcast-card:is(:hover, :focus) .card-title { background-size: 100% 2px; }
+
