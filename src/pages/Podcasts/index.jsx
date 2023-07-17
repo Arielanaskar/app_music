@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 export default function Podcasts() {
   useTitle("Podcasts");
   const refresh_token = localStorage.getItem("refresh_token");
+  const baseURL = window.location.origin;
 
   if (!refresh_token) {
     return (
@@ -21,7 +22,7 @@ export default function Podcasts() {
               The page requires logging in to a Spotify account.
             </div>
             <Link
-              to={`https://accounts.spotify.com/authorize?client_id=2f8f49f0e6f245b7aa03d5a45aa92c18&redirect_uri=http://localhost:3000/callback&scope=user-read-playback-position+user-read-private&response_type=code&show_dialog=true`}
+              to={`https://accounts.spotify.com/authorize?client_id=2f8f49f0e6f245b7aa03d5a45aa92c18&redirect_uri=${baseURL}/callback&scope=user-read-playback-position+user-read-private&response_type=code&show_dialog=true`}
               className="cursor-pointer"
             >
               <div className="py-[10px] px-0 bg-[#fefefe] rounded-full w-[200px] text-center font-[600] mt-[15%] text-[#1f1f1f]">

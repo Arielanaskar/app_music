@@ -9,6 +9,7 @@ export default function App() {
     const urlParams = new URLSearchParams(window.location.search);
     const code = urlParams.get("code");
     const urlWithoutCallback = window.location.origin + window.location.pathname.split('/')[0];
+    const baseURL = window.location.origin;
     if (code) {
       const fetchData = async() => {
         const response = await fetch(`https://accounts.spotify.com/api/token`, {
@@ -19,7 +20,7 @@ export default function App() {
               `2f8f49f0e6f245b7aa03d5a45aa92c18:c1ff48ff741042e0a63cbfa9fdbe51ec`
             )}`,
           },
-          body: `code=${code}&grant_type=authorization_code&redirect_uri=http://localhost:3000/callback`,
+          body: `code=${code}&grant_type=authorization_code&redirect_uri=${baseURL}/callback`,
         });
         const data = await response.json();
         window.localStorage.setItem("refresh_token", data.refresh_token);

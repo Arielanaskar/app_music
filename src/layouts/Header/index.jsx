@@ -7,6 +7,7 @@ import AudioPlayerContext from "../../context/audioContext";
 
 export default function Header() {
   const { user, setUser } = useContext(AudioPlayerContext);
+  const baseURL = window.location.origin;
 
   useEffect(() => {
     if (
@@ -130,7 +131,7 @@ export default function Header() {
                   <div>
                     <button
                       onClick={() =>
-                        (window.location.href = `https://accounts.spotify.com/authorize?client_id=2f8f49f0e6f245b7aa03d5a45aa92c18&redirect_uri=http://localhost:3000/callback&scope=user-read-playback-position+user-read-private&response_type=code&show_dialog=true`)
+                        (window.location.href = `https://accounts.spotify.com/authorize?client_id=2f8f49f0e6f245b7aa03d5a45aa92c18&redirect_uri=${baseURL}/callback&scope=user-read-playback-position+user-read-private&response_type=code&show_dialog=true`)
                       }
                       className="
                             w-full 
